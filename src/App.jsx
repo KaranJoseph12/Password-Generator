@@ -1,19 +1,32 @@
-import { useCallback, useEffect, useRef, useState } from "react"
-
 import React from 'react'
+import { useState,useCallback,useEffect,useRef } from 'react'
+
 
 const App = () => {
+
+  const [length, setLength] = useState(8);
+  const [numberAllowed, setNumberAllowed] = useState(false);
+  const [charAllowed, setCharAllowed] = useState(false);
+  const [password, setPassword] = useState("");
+  const [btn, setBtn] = useState("Copy");
+
+
+
   return (
-    <div className="w-full max-w-md bg-gray-700 mx-auto rounded-lg px-3 my-12 py-1 text-orange-500">
-      <h1 className="text-white text-xl text-center pb-2"> Password Generator</h1>
-       <div className=" flex justify-center rounded-lg py-2 gap-1">
-            <input type="text" 
-            className=" outline-none rounded-lg w-full py-1 px-2" 
-            placeholder="Password"
-            readOnly
-            />
-            <button className="px-2 py-1 bg-orange-500 text-white rounded-lg outline-none">Copy</button>
-       </div>
+    <div className='w-full max-w-md bg-gray-700 text-lime-400 my-12 px-3 py-1 mx-auto rounded-lg font-[Rubik]'>
+      <h1 className='text-center pb-4 text-2xl font-semibold py-2'>Password Generator</h1>
+      <div className='flex overflow-hidden rounded-lg mb-4 '>
+        <input 
+        type="text" 
+        id='input-text'
+        value={password}
+        className='w-full px-3 py-1'
+        placeholder='Password'
+        readOnly
+        />
+        <button className='px-2 text-white bg-lime-500 hover:bg-lime-400 active:bg-lime-600'>{btn}</button>
+      </div>
+
     </div>
   )
 }
