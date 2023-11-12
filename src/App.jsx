@@ -24,7 +24,37 @@ const App = () => {
         placeholder='Password'
         readOnly
         />
-        <button className='px-2 text-white bg-lime-500 hover:bg-lime-400 active:bg-lime-600'>{btn}</button>
+        <button className=' outline-none px-2 text-white bg-lime-500 hover:bg-lime-400 active:bg-lime-600'>{btn}</button>
+      </div>
+      <div className='flex gap-x-2 '>
+        <div className='flex items-center gap-x-1'>
+          <input
+           type="range"
+           id='length'
+           value={length}
+           min={8}
+           max={80}
+           className='accent-lime-400 outline-none w-28'
+           onChange={(e)=>{setLength(e.target.value)}}
+            />
+          <label className='pr-2' htmlFor="length">Length: ({length})</label>
+        </div>
+        <div className='flex items-center gap-x-1'>
+          <input 
+          type="checkbox"
+          id='numbers'
+          className=' accent-lime-400 checked outline-none '
+           />
+           <label className='pr-2' htmlFor="numbers">Numbers</label>
+        </div>
+        <div className='flex items-center gap-x-1'>
+          <input 
+          type="checkbox"
+          id='characters'
+          className=' accent-lime-400 checked outline-none '
+           />
+           <label  htmlFor="characters">Characters</label>
+        </div>
       </div>
 
     </div>
